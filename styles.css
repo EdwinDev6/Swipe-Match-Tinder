@@ -7,8 +7,7 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   display: grid;
   place-content: center;
   min-height: 100vh;
@@ -16,15 +15,18 @@ body {
   user-select: none;
   background: #e5e5e5;
 }
+
 .white-bkg {
   position: absolute;
   background: #f6f6f6;
   inset: 0;
   z-index: -10;
 }
+
 .shadow {
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
 }
+
 main {
   background: url("./images/iphone.png") no-repeat;
   background-size: contain;
@@ -38,8 +40,8 @@ section {
   width: 100%;
   border-radius: 32px;
   display: flex;
-  gap: 24px;
   flex-direction: column;
+  gap: 24px;
   overflow: hidden;
   position: relative;
   padding: 16px 6px;
@@ -50,11 +52,11 @@ header {
   display: flex;
   justify-content: start;
   padding-left: 1rem;
+}
 
-  & img {
-    width: 24px;
-    height: 24px;
-  }
+header img {
+  width: 24px;
+  height: 24px;
 }
 
 footer {
@@ -64,44 +66,43 @@ footer {
   padding: 0 24px;
   justify-content: center;
   align-items: center;
+}
 
-  & button {
-    background: url("/images/icons.png") no-repeat;
-    background-position: 0px 0px;
-    background-size: 175px;
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    border: 0;
-    cursor: pointer;
-    transition: scale 0.3s ease;
+footer button {
+  background: url("/images/icons.png") no-repeat;
+  background-size: 175px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
-    &:hover {
-      scale: 1.4;
-    }
+footer button:hover {
+  transform: scale(1.4);
+}
 
-    &.is-big {
-      background-size: 250px;
-      width: 48px;
-      height: 48px;
-    }
+footer button.is-big {
+  background-size: 250px;
+  width: 48px;
+  height: 48px;
+}
 
-    &.is-undo {
-      background-position: -140px 0;
-    }
+footer button.is-undo {
+  background-position: -140px 0;
+}
 
-    &.is-remove {
-      background-position: -150px 0;
-    }
+footer button.is-remove {
+  background-position: -150px 0;
+}
 
-    &.is-fav {
-      background-position: -50px 0;
-    }
+footer button.is-fav {
+  background-position: -50px 0;
+}
 
-    &.is-star {
-      background-position: -70px 0px;
-    }
-  }
+footer button.is-star {
+  background-position: -70px 0;
 }
 
 .cards {
@@ -109,99 +110,94 @@ footer {
   width: 100%;
   height: 100%;
   margin: 0 auto;
+}
 
-  & > span {
-    display: grid;
-    place-content: center;
-    color: #777;
-    font-size: 14px;
-    text-align: center;
-    height: 100%;
-    z-index: -1;
-  }
+.cards > span {
+  display: grid;
+  place-content: center;
+  color: #777;
+  font-size: 14px;
+  text-align: center;
+  height: 100%;
+  z-index: -1;
+}
 
-  & article {
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    cursor: grab;
-    overflow: hidden;
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+.cards article {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: grab;
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
 
-    &.go-left {
-      transform: translateX(-150%) rotate(-30deg) !important;
-    }
+.cards article.go-left {
+  transform: translateX(-150%) rotate(-30deg) !important;
+}
 
-    &.go-right {
-      transform: translateX(150%) rotate(30deg) !important;
-    }
+.cards article.go-right {
+  transform: translateX(150%) rotate(30deg) !important;
+}
 
-    &.go-left,
-    &.go-right {
-      transition: transform 0.3s ease, rotate 0.3s ease;
-    }
+.cards article.reset {
+  transform: translateX(0) !important;
+}
 
-    &.reset {
-      transition: transform 0.3s ease;
-      transform: translateX(0) !important;
-    }
+.cards .choice {
+  border-radius: 8px;
+  color: black;
+  border: 4px solid;
+  z-index: 9999;
+  position: absolute;
+  top: 32px;
+  right: 16px;
+  opacity: 0;
+  padding: 4px 8px;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: fit-content;
+}
 
-    & .choice {
-      border-radius: 8px;
-      color: black;
-      border: 4px solid;
-      z-index: 9999;
-      position: absolute;
-      top: 32px;
-      right: 16px;
-      opacity: 0;
-      padding: 4px 8px;
-      font-size: 24px;
-      font-weight: bold;
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      width: fit-content;
+.cards .choice.nope {
+  border-color: #ff6e63;
+  color: #ff6e63;
+  transform: rotate(30deg);
+}
 
-      &.nope {
-        border-color: #ff6e63;
-        color: #ff6e63;
-        transform: rotate(30deg);
-      }
+.cards .choice.like {
+  border-color: #63ff68;
+  color: #63ff68;
+  left: 16px;
+  transform: rotate(-30deg);
+}
 
-      &.like {
-        border-color: #63ff68;
-        color: #63ff68;
-        left: 16px;
-        transform: rotate(-30deg);
-      }
-    }
+.cards article img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.cards article h2 {
+  color: white;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  padding: 16px;
+  z-index: 3;
+  background: linear-gradient(to top, #00000088 20%, transparent 40%);
+}
 
-    & h2 {
-      color: white;
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: flex-end;
-      height: 100%;
-      width: 100%;
-      padding: 16px;
-      z-index: 3;
-      background: linear-gradient(to top, #00000088 20%, transparent 40%);
-    }
-
-    & span {
-      margin-left: 6px;
-      font-size: 18px;
-      line-height: 1.4;
-      font-weight: 400;
-    }
-  }
+.cards article span {
+  margin-left: 6px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 400;
 }
