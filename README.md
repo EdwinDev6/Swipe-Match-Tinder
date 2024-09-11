@@ -9,3 +9,4 @@ User Interface:
 + HTML
 + CSS
 + JavaScript
+images must be changed to avif
