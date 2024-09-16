@@ -10,3 +10,4 @@ User Interface:
 + CSS
 + JavaScript
 images must be changed to avif
+beta version
