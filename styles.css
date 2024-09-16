@@ -28,7 +28,7 @@ body {
 }
 
 main {
-  background: url("./images/iphone.png") no-repeat;
+  background: url("./images/iphone.avif") no-repeat;
   background-size: contain;
   width: 320px;
   height: 640px;
@@ -69,7 +69,7 @@ footer {
 }
 
 footer button {
-  background: url("/images/icons.png") no-repeat;
+  background: url("/images/icons.avif") no-repeat;
   background-size: 175px;
   height: 32px;
   width: 32px;
